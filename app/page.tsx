@@ -152,7 +152,7 @@ export default function PortfolioPage() {
                   <a className="underline hover:opacity-80" href={p.links.repo} target="_blank" rel="noreferrer">Repo</a>
                 )}
                 {p.links.caso && (
-                  <a className="underline hover:opacity-80" href={p.links.caso} target="_blank" rel="noreferrer">Caso</a>
+                  <span className="text-sm text-neutral-400">{p.links.caso}</span>
                 )}
                 <Link className="underline hover:opacity-80" href={`/proyectos/${slugify(p.titulo)}`}>Ver detalles</Link>
               </div>

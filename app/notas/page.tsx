@@ -18,7 +18,7 @@ const profile = {
 export default function NotasPage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
-      <Header profile={profile} />
+      <Header />
       
       <main className="mx-auto max-w-6xl px-4 py-8">
         {/* Breadcrumb */}
@@ -102,7 +102,7 @@ export default function NotasPage() {
         </section>
       </main>
 
-      <Footer profile={profile} />
+      <Footer />
     </div>
   );
 }

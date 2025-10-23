@@ -206,7 +206,7 @@ export const proyectos: Project[] = [
     `,
     stack: ["React Native", "Django REST", "QR", "Expo", "Android APK"],
     resultado: "Build real con EAS + Android APK para instalación. Entrega rápida y mantenimiento simple.",
-    links: { demo: null, repo: null, caso: null },
+    links: { demo: null, repo: "https://github.com/matiasvagli/pagina-personal", caso: null },
     imagenes: ["/proyectos/appmovil/a1.png", "/proyectos/appmovil/a3.png", "/proyectos/appmovil/a4.png", "/proyectos/appmovil/a5.png", "/proyectos/appmovil/a6.png", "/proyectos/appmovil/a7.png", "/proyectos/appmovil/a8.png", "/proyectos/appmovil/a9.png", "/proyectos/appmovil/a10.png", "/proyectos/appmovil/a11.png", "/proyectos/appmovil/a12.png", "/proyectos/appmovil/a13.png"] 
   },
 ];

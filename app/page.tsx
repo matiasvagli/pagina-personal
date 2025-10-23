@@ -21,6 +21,7 @@ const profile = {
 
 // Proyectos destacados (3–4 con impacto real)
 import { proyectos as proyectosData, slugify } from "./data/projects";
+import { notasTecnicas, slugifyNota } from "./data/notas";
 
 const skills = {
   Backend: ["Python", "Django", "FastAPI", "REST APIs", "JWT Auth", "DRF", "WebSockets"],
@@ -50,22 +51,13 @@ const seniorVibes = [
   },
 ];
 
-const posts = [
-  {
-    titulo: "Cómo diseñar un modelo muchos-a-muchos con atributos",
-    fecha: "Oct 2025",
-    resumen:
-      "Patrones de modelado en SQL/Django ORM para evitar joins inválidos y N+1.",
-    url: "#",
-  },
-  {
-    titulo: "Guía rápida de Docker para backends Django/FastAPI",
-    fecha: "Oct 2025",
-    resumen:
-      "Estructura de imágenes, multi-stage, salud de contenedores y tips de producción.",
-    url: "#",
-  },
-];
+// Usar las notas técnicas del archivo de datos
+const posts = notasTecnicas.map(nota => ({
+  titulo: nota.titulo,
+  fecha: nota.fecha,
+  resumen: nota.resumen,
+  url: `/notas/${slugifyNota(nota.titulo)}`,
+}));
 
 // ======== COMPONENTE ======== //
 export default function PortfolioPage() {
@@ -208,7 +200,7 @@ export default function PortfolioPage() {
       <section id="blog" className="mx-auto max-w-6xl px-4 py-10 border-t border-white/10">
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Notas técnicas</h2>
-          <a href="#" className="text-sm underline underline-offset-4">Ver todas</a>
+          <a href="/notas" className="text-sm underline underline-offset-4">Ver todas</a>
         </div>
         <div className="mt-6 grid md:grid-cols-2 gap-6">
           {posts.map((post, i) => (

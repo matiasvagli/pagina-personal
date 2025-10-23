@@ -2,6 +2,7 @@ import { notasTecnicas, slugifyNota } from '../data/notas';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const profile = {
   nombre: "Matías Vagliviello",
@@ -22,12 +23,12 @@ export default function NotasPage() {
       <main className="mx-auto max-w-6xl px-4 py-8">
         {/* Breadcrumb */}
         <nav className="mb-8">
-          <a 
+          <Link 
             href="/" 
             className="text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
           >
             ← Volver al inicio
-          </a>
+          </Link>
         </nav>
 
         {/* Header */}
@@ -64,12 +65,12 @@ export default function NotasPage() {
               </div>
               
               {/* Link */}
-              <a 
+              <Link 
                 href={`/notas/${slugifyNota(nota.titulo)}`}
                 className="inline-flex items-center gap-2 text-sm text-neutral-200 hover:text-white transition-colors"
               >
                 Leer más <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </article>
           ))}
         </div>

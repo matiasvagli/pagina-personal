@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { notasTecnicas, slugifyNota } from '../../data/notas';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Link from 'next/link';
 
 const profile = {
   nombre: "Matías Vagliviello",
@@ -34,12 +35,12 @@ export default async function NotaPage({ params }: Props) {
       <main className="mx-auto max-w-4xl px-4 py-8">
         {/* Breadcrumb */}
         <nav className="mb-8">
-          <a 
+          <Link 
             href="/" 
             className="text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
           >
             ← Volver al inicio
-          </a>
+          </Link>
         </nav>
 
         {/* Header de la nota */}

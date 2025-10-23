@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import Link from "next/link";
 import MotionH1, { MotionArticle } from "./components/Motion";
 import Accordion from "./components/Accordion";
 import { Github, Linkedin, Mail, Phone, ArrowRight, Database, Server, Globe } from "lucide-react";
@@ -150,7 +151,7 @@ export default function PortfolioPage() {
                 {p.links.caso && (
                   <a className="underline hover:opacity-80" href={p.links.caso} target="_blank" rel="noreferrer">Caso</a>
                 )}
-                <a className="underline hover:opacity-80" href={`/proyectos/${slugify(p.titulo)}`}>Ver detalles</a>
+                <Link className="underline hover:opacity-80" href={`/proyectos/${slugify(p.titulo)}`}>Ver detalles</Link>
               </div>
             </MotionArticle>
           ))}
@@ -200,7 +201,7 @@ export default function PortfolioPage() {
       <section id="blog" className="mx-auto max-w-6xl px-4 py-10 border-t border-white/10">
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Notas técnicas</h2>
-          <a href="/notas" className="text-sm underline underline-offset-4">Ver todas</a>
+          <Link href="/notas" className="text-sm underline underline-offset-4">Ver todas</Link>
         </div>
         <div className="mt-6 grid md:grid-cols-2 gap-6">
           {posts.map((post, i) => (
@@ -209,9 +210,9 @@ export default function PortfolioPage() {
               <h3 className="mt-1 text-lg font-medium">{post.titulo}</h3>
               <p className="mt-2 text-neutral-300">{post.resumen}</p>
               <div className="mt-3 text-sm">
-                <a className="inline-flex items-center gap-1 underline hover:opacity-80" href={post.url}>
+                <Link className="inline-flex items-center gap-1 underline hover:opacity-80" href={post.url}>
                   Leer más <ArrowRight className="w-3 h-3"/>
-                </a>
+                </Link>
               </div>
             </article>
           ))}

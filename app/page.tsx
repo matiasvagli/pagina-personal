@@ -93,6 +93,9 @@ export default function PortfolioPage() {
             <p className="mt-3 text-lg text-neutral-300">{profile.titular}</p>
             <p className="mt-4 text-neutral-400 max-w-2xl">{profile.resumen}</p>
             <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/sobre-mi" className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 text-white px-4 py-2 font-medium hover:bg-blue-700 transition">
+                Conoce más sobre mí
+              </Link>
               {profile.email && (
                 <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 rounded-2xl bg-white text-neutral-900 px-4 py-2 font-medium hover:bg-neutral-200 transition">
                   <Mail className="w-4 h-4"/> Escribime
@@ -201,7 +204,10 @@ export default function PortfolioPage() {
       <section id="blog" className="mx-auto max-w-6xl px-4 py-10 border-t border-white/10">
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Notas técnicas</h2>
-          <Link href="/notas" className="text-sm underline underline-offset-4">Ver todas</Link>
+          <div className="flex gap-4">
+            <Link href="/sobre-mi" className="text-sm underline underline-offset-4">Sobre mí</Link>
+            <Link href="/notas" className="text-sm underline underline-offset-4">Ver todas</Link>
+          </div>
         </div>
         <div className="mt-6 grid md:grid-cols-2 gap-6">
           {posts.map((post, i) => (

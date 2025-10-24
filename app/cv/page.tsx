@@ -33,7 +33,7 @@ export default function CVPDFPage() {
         <div className="flex items-start gap-6 mb-8">
           <div className="w-32 h-32 rounded-lg overflow-hidden border-2 border-gray-300">
             <img 
-              src="/personal/p3.webp" 
+              src="/personal/p3.jpg" 
               alt="Matías Vagliviello" 
               className="w-full h-full object-cover"
             />

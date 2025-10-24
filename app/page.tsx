@@ -17,7 +17,7 @@ const profile = {
   whatsapp: "5491168465477", 
   linkedin: "https://www.linkedin.com/in/matias-vagliviello-07403736b/",
   github: "https://github.com/matiasvagli",
-  fotoUrl: "/personal/p3.webp",
+  fotoUrl: "/personal/p3.jpg",
 };
 
 // Proyectos destacados (3–4 con impacto real)

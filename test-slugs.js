@@ -28,3 +28,4 @@ proyectos.forEach(proyecto => {
   console.log(`URL: /proyectos/${slug}`);
   console.log("---");
 });
+

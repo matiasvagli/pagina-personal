@@ -176,27 +176,104 @@ class VentasRepository(BaseRepository):
 
     # ... más métodos</code></pre>
 
+      <h3>🌐 Repository no es solo para BD: Abstracción de servicios externos</h3>
+      <p>El patrón Repository no se limita solo a bases de datos. También es ideal para abstraer <strong>servicios externos</strong> como APIs de terceros, sistemas de pago, envío de emails, almacenamiento en la nube, etc.</p>
+
+      <h4>Ejemplo: Abstracción de servicio de emails</h4>
+      <pre><code># Repositorio para abstraer el servicio de emails
+class EmailRepository:
+    def enviar(self, destinatario, asunto, mensaje):
+        # Implementación con SendGrid
+        pass
+
+class EmailRepositorySMTP(EmailRepository):
+    def enviar(self, destinatario, asunto, mensaje):
+        # Implementación con SMTP (Gmail, Outlook)
+        pass
+
+class EmailRepositoryFake(EmailRepository):
+    def enviar(self, destinatario, asunto, mensaje):
+        # Para testing: solo registra sin enviar
+        print(f"Email enviado a {destinatario}: {asunto}")
+
+# El servicio no sabe cómo se envía el email
+class NotificacionService:
+    def __init__(self, email_repo: EmailRepository):
+        self.email_repo = email_repo
+
+    def notificar_pedido(self, cliente, pedido):
+        mensaje = f"Tu pedido #{pedido.id} fue procesado"
+        self.email_repo.enviar(cliente.email, "Confirmación", mensaje)</code></pre>
+
+      <h4>Ejemplo: Abstracción de servicio de pagos</h4>
+      <pre><code>class PagosRepository:
+    def procesar_pago(self, monto, tarjeta):
+        pass
+
+class PagosRepositoryStripe(PagosRepository):
+    def procesar_pago(self, monto, tarjeta):
+        # Integración con Stripe API
+        pass
+
+class PagosRepositoryMercadoPago(PagosRepository):
+    def procesar_pago(self, monto, tarjeta):
+        # Integración con MercadoPago API
+        pass
+
+# Cambiar de Stripe a MercadoPago es solo cambiar el Repository
+servicio = VentasService(PagosRepositoryStripe())</code></pre>
+
+      <h4>✅ Beneficios de Repository para servicios externos</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Beneficio</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cambiar proveedor es fácil</td>
+            <td>SendGrid → AWS SES sin tocar lógica de negocio</td>
+          </tr>
+          <tr>
+            <td>Testing sin servicios reales</td>
+            <td>No necesitas API keys para testear</td>
+          </tr>
+          <tr>
+            <td>Múltiples implementaciones</td>
+            <td>Stripe para producción, Mock para desarrollo</td>
+          </tr>
+          <tr>
+            <td>Aislamiento de dependencias</td>
+            <td>Si el servicio falla, tu lógica sigue limpia</td>
+          </tr>
+        </tbody>
+      </table>
+
       <h3>🎯 Resumen</h3>
       <p><strong>El patrón Repository no es obligatorio, pero es profesional porque:</strong></p>
       <ul>
         <li>✅ Separación de responsabilidades (Clean Architecture)</li>
-        <li>✅ Código testeable sin BD</li>
+        <li>✅ Código testeable sin BD ni servicios externos</li>
         <li>✅ Fácil mantenimiento</li>
         <li>✅ Escalable</li>
         <li>✅ Reutilizable</li>
+        <li>✅ Abstrae bases de datos Y servicios externos (APIs, emails, pagos, etc.)</li>
       </ul>
 
       <blockquote>
         <p><strong>💡 Regla de backend real:</strong></p>
-        <p>Si tu código crecerá y necesitarás mantenimiento, usá Repository. Si es un script pequeño de una vez, no es necesario.</p>
+        <p>Si tu código crecerá y necesitarás mantenimiento, usá Repository. Si es un script pequeño de una vez, no es necesario. El patrón funciona igual para BD, APIs externas, servicios de terceros y cualquier dependencia que quieras abstraer.</p>
       </blockquote>
 
       <h3>Tech Stack</h3>
       <ul>
         <li>Patrón de Arquitectura</li>
-        <li>Principios SOLID (Single Responsibility)</li>
+        <li>Principios SOLID (Single Responsibility, Dependency Inversion)</li>
         <li>Testing (unittest, pytest)</li>
         <li>ORM (Django ORM, SQLAlchemy)</li>
+        <li>APIs de terceros (Stripe, SendGrid, AWS, etc.)</li>
       </ul>
     `,
     tags: ["Backend", "Arquitectura", "Patrones", "Python", "Clean Code"],

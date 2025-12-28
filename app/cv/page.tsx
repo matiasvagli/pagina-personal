@@ -32,17 +32,17 @@ export default function CVPDFPage() {
         {/* Header con foto */}
         <div className="flex items-start gap-6 mb-8">
           <div className="w-32 h-32 rounded-lg overflow-hidden border-2 border-gray-300">
-            <img 
-              src="/personal/p3.jpg" 
-              alt="Matías Vagliviello" 
+            <img
+              src="/personal/p3.jpg"
+              alt="Matías Vagliviello"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="flex-1">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Matías Vagliviello</h1>
-            <h2 className="text-xl text-blue-600 mb-2">Backend Developer – Python & SQL</h2>
+            <h2 className="text-xl text-blue-600 mb-2">Backend Developer | Python · TypeScript · AI Explorer</h2>
             <p className="text-gray-600 mb-4">Buenos Aires, Argentina</p>
-            
+
             {/* Información de contacto */}
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
@@ -50,8 +50,8 @@ export default function CVPDFPage() {
                 <p><strong>Teléfono:</strong> +54 9 11 6846-5477</p>
               </div>
               <div>
-                <p><strong>LinkedIn:</strong> linkedin.com/in/matias-vagliviello-07403736b</p>
-                <p><strong>GitHub:</strong> github.com/matiasvagli</p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/matias-vagliviello-07403736b" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">LinkedIn</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/matiasvagli" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">GitHub</a></p>
               </div>
             </div>
           </div>
@@ -61,124 +61,83 @@ export default function CVPDFPage() {
         <section className="mb-8">
           <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">PERFIL PROFESIONAL</h3>
           <p className="text-gray-700 leading-relaxed">
-            Soy desarrollador backend especializado en el ecosistema Python, construyendo APIs y microservicios con FastAPI, Django, SQL y Docker.<br/>
-            Me interesa especialmente el diseño de software y las buenas prácticas. Vengo formándome y aplicando conceptos de arquitectura hexagonal, principios SOLID, modularidad y Domain-Driven Design (DDD) para crear sistemas más mantenibles, escalables y fáciles de testear.<br/>
-            Soy creador de <strong>CRUDfull</strong>, una herramienta CLI open source que genera proyectos y recursos CRUD completos en FastAPI (modelos, esquemas, servicios, routers, tests y entorno Docker), pensada para acelerar el desarrollo sin perder estructura ni calidad.<br/>
-            Además del stack Python, tengo experiencia práctica con JavaScript y TypeScript en el desarrollo de APIs. Actualmente estoy aprendiendo Go, profundizando en concurrencia y performance para ampliar mi stack y fortalecer mi perfil backend.<br/>
-            Disfruto aprender y mejorar continuamente: arquitectura, patrones, testing, diseño de APIs, performance y DevOps. Mi objetivo es aportar valor en equipos donde la calidad del software, la arquitectura y la mejora continua sean parte del día a día.
+            Desarrollador Backend especializado en el ecosistema Python (FastAPI, Django) y TypeScript (NestJS). Mi enfoque principal es la creación de APIs robustas y escalables bajo principios SOLID, Clean Architecture y DDD.<br /><br />
+            Actualmente, estoy integrando herramientas de Inteligencia Artificial (LLMs) en flujos de backend para optimizar la toma de decisiones y la experiencia de usuario. Soy el creador de <strong>CRUDfull</strong>, una herramienta CLI open source diseñada para estandarizar y acelerar el desarrollo de microservicios con calidad de producción.
           </p>
         </section>
 
-        {/* Experiencia */}
+        {/* Experiencia Relevante */}
         <section className="mb-8">
-          <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">EXPERIENCIA FREELANCE</h3>
-          
+          <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">EXPERIENCIA RELEVANTE</h3>
+
           <div className="mb-6">
-            <h4 className="text-lg font-semibold text-gray-900">Desarrollador Backend – Sistema de Control de Ventas</h4>
-            <p className="text-blue-600 font-medium mb-2">Proyecto Freelance – 2024</p>
-            <p className="text-gray-700 mb-3">
-              Diseño y desarrollo backend para sistema completo de gestión comercial: ventas, clientes, inventario, caja, estadísticas y usuarios.
-            </p>
-            <p className="text-sm text-gray-600 mb-2"><strong>Tecnologías:</strong> Python, Django, PostgreSQL, Docker</p>
+            <h4 className="text-lg font-semibold text-gray-900">Desarrollador Backend (Freelance)</h4>
+            <p className="text-blue-600 font-medium mb-2">2025 – Actualidad</p>
+            <p className="text-gray-700 font-medium mb-2">Sistema de Control de Ventas e Inventario Inteligente</p>
             <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
-              <li>Modelado de base de datos relacional y lógica de negocio</li>
-              <li>Implementación de autenticación y autorización</li>
-              <li>Generación de reportes y comprobantes</li>
-              <li>API REST para uso interno y aplicación móvil</li>
-              <li>Contenedores con Docker y despliegue productivo</li>
+              <li>Diseñé y desarrollé el núcleo del sistema utilizando Django y PostgreSQL.</li>
+              <li><strong>Integración de IA:</strong> Implementé un asistente inteligente con LangChain que permite a los usuarios consultar estadísticas de ventas y stock mediante lenguaje natural (Text-to-SQL).</li>
+              <li><strong>Performance y Seguridad:</strong> Aseguré la integridad de los datos aplicando el Principio de Menor Privilegio (RBAC), configurando usuarios de base de datos de "solo lectura" para el motor de IA.</li>
+              <li><strong>Arquitectura:</strong> Diseñé un backend modular utilizando Django y PostgreSQL, priorizando la separación de lógica de negocio de las vistas para mejorar la mantenibilidad. Implementé una capa de servicios personalizada para centralizar reglas de negocio, facilitando la integración con el sistema de reportes y la IA.</li>
+            </ul>
+
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-gray-900">Creador de CRUDfull (Proyecto Open Source)</h4>
+            <p className="text-blue-600 font-medium mb-2">2025</p>
+            <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
+              <li>Desarrollé una herramienta CLI en Python que automatiza la generación de boilerplate para proyectos FastAPI (Modelos, Schemas, Repositorios, Tests y Docker).</li>
+              <li>Enfocado en la estandarización de código y aceleración de tiempos de desarrollo (Time-to-Market) para otros desarrolladores.</li>
             </ul>
           </div>
 
           <div className="mb-6">
-            <h4 className="text-lg font-semibold text-gray-900">Desarrollador Full Stack – Coruja Casas Serranas</h4>
-            <p className="text-blue-600 font-medium mb-2">Proyecto Freelance – 2025</p>
-            <p className="text-gray-700 mb-3">
-              Sitio web profesional para alquiler turístico con sistema de reservas y consultas.
-            </p>
-            <p className="text-sm text-gray-600 mb-2"><strong>Tecnologías:</strong> Next.js, React, TailwindCSS, Django REST</p>
+            <h4 className="text-lg font-semibold text-gray-900">Automatización de Trading (Proyecto Personal)</h4>
+            <p className="text-blue-600 font-medium mb-2">2023</p>
             <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
-              <li>Desarrollo frontend moderno responsive</li>
-              <li>Integración de backend y formularios funcionales</li>
-              <li>SEO técnico para posicionamiento en Google</li>
-              <li>Optimización de tiempos de carga</li>
+              <li>Construí un bot de ejecución de órdenes mediante REST APIs.</li>
+              <li>Enfoque en manejo de datos en tiempo real y gestión de errores críticos en entornos financieros.</li>
             </ul>
           </div>
-
-          <div className="mb-6">
-            <h4 className="text-lg font-semibold text-gray-900">Automatización Python – Bot de Trading</h4>
-            <p className="text-blue-600 font-medium mb-2">Proyecto Personal – 2023</p>
-            <p className="text-gray-700 mb-3">
-              Automatización de ejecución de órdenes para exchange mediante API en Python.
-            </p>
-            <p className="text-sm text-gray-600 mb-2"><strong>Tecnologías:</strong> Python, REST APIs</p>
-            <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
-              <li>Integración con API de exchange</li>
-              <li>Manejo y lectura de datos en tiempo real</li>
-              <li>Control de riesgo y ejecución segura</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Educación */}
-        <section className="mb-8">
-          <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">EDUCACIÓN Y FORMACIÓN</h3>
-          <ul className="space-y-2 text-gray-700">
-            <li>• <strong>SQL Avanzado y Optimización de Consultas</strong> – Udemy (2025)</li>
-            <li>• <strong>Arquitectura Hexagonal</strong> – Codely (2025)</li>
-            <li>• <strong>JavaScript / TypeScript</strong> – Curso intensivo (2024)</li>
-            <li>• <strong>Docker y DevOps para Desarrollo Backend</strong> – Udemy (2024)</li>
-            <li>• <strong>Python Backend Profesional (Django / FastAPI)</strong> – CoderHouse (2023)</li>
-            <li>• Capacitación continua en arquitectura de software y bases de datos</li>
-          </ul>
         </section>
 
         {/* Tecnologías */}
         <section className="mb-8">
           <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">TECNOLOGÍAS</h3>
-          <div className="grid grid-cols-2 gap-6">
-            <div>
-              <p className="text-gray-700"><strong>Lenguajes:</strong> Python, JavaScript, TypeScript</p>
-              <p className="text-gray-700"><strong>Backend:</strong> Django, Django REST, FastAPI, Nest</p>
-              <p className="text-gray-700"><strong>Bases de Datos:</strong> PostgreSQL, MySQL, SQLite, SQL, MongoDB</p>
-            </div>
-            <div>
-              <p className="text-gray-700"><strong>DevOps:</strong> Docker, Docker Compose, Nginx</p>
-              <p className="text-gray-700"><strong>Frontend:</strong> React, Next.js, TailwindCSS</p>
-              <p className="text-gray-700"><strong>Herramientas:</strong> Git, GitHub, VS Code, Linux</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Habilidades */}
-        <section className="mb-8">
-          <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">HABILIDADES</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <ul className="space-y-1 text-gray-700">
-              <li>• Diseño y consumo de APIs REST</li>
-              <li>• Modelado de datos relacionales</li>
-              <li>• Optimización de consultas SQL</li>
-              <li>• Integración backend + frontend</li>
-            </ul>
-            <ul className="space-y-1 text-gray-700">
-              <li>• Resolución de problemas técnicos</li>
-              <li>• Trabajo autónomo y profesionalismo</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Idiomas */}
-        <section className="mb-8">
-          <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">IDIOMAS</h3>
-          <ul className="space-y-1 text-gray-700">
-            <li>• Español (nativo)</li>
-            <li>• Inglés (intermedio técnico)</li>
+          <ul className="space-y-2 text-gray-700">
+            <li><strong>Lenguajes:</strong> Python, TypeScript, JavaScript (Explorando Go).</li>
+            <li><strong>Backend:</strong> FastAPI, Django, NestJS, Node.js.</li>
+            <li><strong>IA & Data:</strong> LangChain, OpenAI API, Prompt Engineering, Text-to-SQL.</li>
+            <li><strong>Bases de Datos:</strong> PostgreSQL (Modelado y permisos), MySQL, Redis (Caching), SQLite.</li>
+            <li><strong>Infraestructura:</strong> Docker, Docker Compose, Git, Linux.</li>
           </ul>
         </section>
 
-        {/* Referencias */}
-        <section>
-          <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">REFERENCIAS</h3>
-          <p className="text-gray-700">Disponibles a solicitud.</p>
+        {/* Educación y Formación */}
+        <section className="mb-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">EDUCACIÓN Y FORMACIÓN</h3>
+          <ul className="space-y-2 text-gray-700">
+            <li>• <strong>Arquitectura Hexagonal</strong> – Codely (2025)</li>
+            <li>• <strong>SQL y Gestión de Datos</strong> – Udemy (2025)</li>
+            <li>• <strong>Docker y DevOps para Backend</strong> – Udemy (2024)</li>
+            <li>• <strong>Python Backend Profesional</strong> – Coderhouse (2023)</li>
+          </ul>
+        </section>
+
+        {/* Habilidades & Idiomas */}
+        <section className="mb-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">HABILIDADES & IDIOMAS</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-2">Soft Skills</h4>
+              <p className="text-gray-700">Resolución de problemas complejos, mentalidad de arquitecto, aprendizaje autodidacta constante.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-2">Inglés</h4>
+              <p className="text-gray-700">Intermedio técnico (lectura de documentación y escritura técnica).</p>
+            </div>
+          </div>
         </section>
       </div>
     </div>
